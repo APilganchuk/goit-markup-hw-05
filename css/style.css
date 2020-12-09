@@ -522,6 +522,7 @@ img {
     border:none;
     border-radius: 4px;
     padding: 6px 22px;
+    cursor: pointer;
 }
 /* Основной контент страницы "Портфолио" */
 
