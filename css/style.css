@@ -80,10 +80,16 @@ img {
     color: var(--primary-text-color);
 
 }
-.auth-nav .link:hover ,
-.auth-nav .link:focus {
+.item:hover .link ,
+.item:focus .link {
     color: var(--accent-color);
 
+}
+li:hover .link {
+    color: var(--accent-color);
+}
+.link:focus {
+   color: var(--accent-color); 
 }
 /* Стили основного контента */
 /* Стили секции героя */
@@ -256,34 +262,31 @@ img {
     margin-right: 93px;
 }
 
-.nav .item::after {
+.link.current::after {
     content: "";
     display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     height: 4px;
-    background-color: transparent;
-    border-radius: 2px;
-    margin-top: 30px;
-    
-}    
-.nav .item:hover::after ,
-.nav .item:focus::after {
     background-color: var(--accent-color);
+    border-radius: 2px;    
 }
+.container .item {
+    position: relative;
+    padding: 32px 0;
+} 
+    
 .nav {
     display: flex;
     margin: 0;
     padding-left: 0;
-    padding-right: 0;
-    padding-top: 30px;
-    cursor: pointer;
-       
+           
 }
 .auth-nav {
     display: flex;
     margin: 0;
-    padding-left: 0;
-    
-               
+    padding-left: 0;              
 }
 .page-header .address {
     margin-left: auto;
@@ -781,3 +784,94 @@ background-image: url("../images/icons/clock-1.svg");
     1px 4px 6px rgba(0, 0, 0, 0.16); 
 }
 /* Позиционированные елементы */
+/* Секция "Чем мы занимаемся" */
+
+.items {
+    position: relative;
+           
+}
+
+.items > .subtitle {  
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 27px 0;
+    margin: 0;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    color: var(--white-color);
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    
+    
+
+    background-color: rgba(47, 48, 58, 0.8);
+    
+}
+/* .items::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 99, 71, 0.5);
+    display: block;
+    position: absolute;
+    opacity: 0;
+    bottom: 0;right: 0;
+}
+.items:hover::after {
+    opacity: 1;
+    transition: 500ms linear;
+    
+} */
+/* Модальное окно "Героя" */
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 528px;
+    min-height: 581px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px; 
+    
+    
+}
+.modal-closed {
+position: absolute;
+right: 0;
+
+width: 30px;
+height: 30px;
+
+background-color: var(--white-bg-color);
+border: 1px solid rgba(0, 0, 0, 0.1);
+border-radius: 50%;
+margin: 8px;
+cursor: pointer;
+}
+.btn-closed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    
+}
+/* Оверлей страницы "Портфолио" */
