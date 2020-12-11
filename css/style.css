@@ -67,7 +67,8 @@ img {
 .nav .link:hover ,
 .nav .link:focus {
     color: var(--accent-color);
-
+    
+    
 }
 .auth-nav .link {
     
@@ -563,7 +564,7 @@ padding: 20px 24px;
     border: 1px solid #EEEEEE;
 }
 /* Работа с фоном и псевдоелементами */
-.hero-overlay {
+.hero-bg {
     max-width: 1600px;
     min-height: 600px;
     margin: 0 auto;
@@ -811,21 +812,7 @@ background-image: url("../images/icons/clock-1.svg");
     background-color: rgba(47, 48, 58, 0.8);
     
 }
-/* .items::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 99, 71, 0.5);
-    display: block;
-    position: absolute;
-    opacity: 0;
-    bottom: 0;right: 0;
-}
-.items:hover::after {
-    opacity: 1;
-    transition: 500ms linear;
-    
-} */
+
 /* Модальное окно "Героя" */
 .backdrop {
     position: fixed;
@@ -835,6 +822,7 @@ background-image: url("../images/icons/clock-1.svg");
     left: 0;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 10;
+    opacity: 1;
 }
 .backdrop.is-hidden {
     opacity: 0;
@@ -875,3 +863,53 @@ cursor: pointer;
     
 }
 /* Оверлей страницы "Портфолио" */
+.overlay::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+    
+  
+}
+.img-overlay {
+    position: relative;
+    overflow: hidden;
+    
+}
+.text {
+    position: absolute;
+    top: 63px;
+    left: 24px;
+    margin: 0;
+    width: 322px;
+    height: 168px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+
+    color: var(--white-color);
+    
+    
+}
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms ease;
+    
+}
+.section-list-card:hover .overlay {
+    
+    transform: translateY(0%);
+    
+}
