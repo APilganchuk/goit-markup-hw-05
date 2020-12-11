@@ -48,6 +48,7 @@ img {
     letter-spacing: 0.03em;
 
     color: #000000; 
+    
 
 }
 .nav .link {
@@ -59,17 +60,16 @@ img {
 
     color: #212121;
 
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav .link.current {
     color: var(--accent-color);
 
 }
-.nav .link:hover ,
-.nav .link:focus {
-    color: var(--accent-color);
-    
-    
+.nav .item {
+    cursor: pointer;
 }
+
 .auth-nav .link {
     
     font-weight: 500;
@@ -80,18 +80,19 @@ img {
 
     color: var(--primary-text-color);
 
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item:hover .link ,
 .item:focus .link {
     color: var(--accent-color);
+    
 
 }
-li:hover .link {
+.link:hover ,
+.link:focus  {
     color: var(--accent-color);
 }
-.link:focus {
-   color: var(--accent-color); 
-}
+
 /* Стили основного контента */
 /* Стили секции героя */
 .hero > .hero-title {         
@@ -208,11 +209,22 @@ li:hover .link {
     color: rgba(255, 255, 255, 0.6);
 }
 /* Стили кнопок страницы "Портфолио" */
+.list-btn {
+    background: #F5F4FA;
+    border:none;
+    border-radius: 4px;
+    padding: 6px 22px;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .list-btn:hover ,
 .list-btn:focus {
     color: var(--white-color);
     background: var(--accent-color);
-
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+                0px 1px 2px rgba(0, 0, 0, 0.08),
+                0px 2px 2px rgba(0, 0, 0, 0.12);
 }                          
 .section .list-btn {
     font-family: 'Roboto', sans-serif;
@@ -521,13 +533,7 @@ li:hover .link {
     margin-right: 8px;
 
 }
-.list-btn {
-    background: #F5F4FA;
-    border:none;
-    border-radius: 4px;
-    padding: 6px 22px;
-    cursor: pointer;
-}
+
 /* Основной контент страницы "Портфолио" */
 
 
@@ -562,6 +568,15 @@ padding: 20px 24px;
 .lists-section {
     width: 370px;
     border: 1px solid #EEEEEE;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.lists-section:hover ,
+.lists-section:focus {
+   
+   box-shadow: 
+    0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16); 
 }
 /* Работа с фоном и псевдоелементами */
 .hero-bg {
@@ -589,6 +604,8 @@ padding: 20px 24px;
     height: 12px;
     margin-right: 10px;
     fill: currentColor;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
     
 }
 .envelope:hover ,
@@ -600,6 +617,8 @@ padding: 20px 24px;
     height: 16px;
     margin-right: 10px;
     fill: currentColor;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .phone:hover ,
 .phone:focus {
@@ -654,13 +673,16 @@ background-image: url("../images/icons/clock-1.svg");
     height: 44px;
     border-radius: 50%;
     color: #afb1b8;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .instagram,.twitter,
 .facebook,.linkedin {
     display: block;
     width: 20px;
     height: 20px;
-    fill: currentColor; 
+    fill: currentColor;
+     
 }
 .social > li:not(:last-child) {
     margin-right: 10px;
@@ -696,6 +718,7 @@ background-image: url("../images/icons/clock-1.svg");
     width: 170px;
     height: 90px;
     color:  #afb1b8;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),border 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-list .item {
     display: block;
@@ -713,7 +736,7 @@ background-image: url("../images/icons/clock-1.svg");
 .clients-list .item:hover ,
 .clients-list .item:focus {
     border: 1px solid var(--accent-color);
-    border-radius: 4px;
+    
 }
 
 /* Фон и псефдоелементы футера */
@@ -746,6 +769,7 @@ background-image: url("../images/icons/clock-1.svg");
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-list .icon:hover::before ,
 .footer-list .icon:focus::before {
@@ -777,13 +801,7 @@ background-image: url("../images/icons/clock-1.svg");
     background-image: url("../images/icons/linkedin-white.svg");
 }
 /* Псевдоелементы главной секции страницы "Портфолио */
-.lists-section:hover {
-   
-   box-shadow: 
-    0px 1px 1px rgba(0, 0, 0, 0.12),
-    0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16); 
-}
+
 /* Позиционированные елементы */
 /* Секция "Чем мы занимаемся" */
 
@@ -905,11 +923,9 @@ cursor: pointer;
     width: 100%;
     height: 100%;
     transform: translateY(100%);
-    transition: transform 250ms ease;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
-.section-list-card:hover .overlay {
-    
+.lists-section:hover .overlay {
     transform: translateY(0%);
-    
 }
